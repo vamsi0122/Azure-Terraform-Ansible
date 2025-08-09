@@ -1,0 +1,13 @@
+---
+- name: Task for copy a file
+  hosts: TEST
+  become: true
+  gather_facts: no
+  tasks:
+    - name: copy module
+      copy:
+        src: /home/sample.txt
+        dest: /home/sample-new.txt
+
+
+
