@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azure Learner — Grow your cloud skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --azure:#0078d4;
+      --azure-dark:#005ea6;
+      --muted:#6b7280;
+      --bg:linear-gradient(135deg,#f7fbff 0%, #eef6ff 100%);
+      --glass: rgba(255,255,255,0.7);
+      --card: #ffffff;
+      --radius: 14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    .container{max-width:1100px;margin:0 auto;padding:36px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--azure),var(--azure-dark));display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 6px 18px rgba(7,18,30,0.08)}
+    .logo svg{width:26px;height:26px}
+    .brand h1{margin:0;font-size:18px}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a.cta{background:linear-gradient(90deg,var(--azure),var(--azure-dark));color:white}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{background:var(--glass);backdrop-filter:blur(6px);padding:36px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(7,18,30,0.06)}
+    .hero h2{font-size:28px;margin:0 0 12px}
+    .sub{color:var(--muted);margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--azure),var(--azure-dark));color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+
+    /* Code mockup */
+    .mock{background:#0b1220;color:#dbeafe;padding:18px;border-radius:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;font-size:13px}
+    .line{opacity:0.9}
+
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 10px 24px rgba(11,21,40,0.04)}
+    .card h3{margin:0 0 8px}
+    .small{color:var(--muted);font-size:13px}
+
+    /* Features */
+    .features{display:flex;gap:14px;margin-top:22px}
+    .feature{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(0,120,212,0.06),rgba(0,120,212,0.02));}
+
+    /* Footer */
+    footer{margin-top:36px;padding:20px;border-radius:12px;background:transparent;display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{order:2;width:100%;justify-content:space-between}
+      .grid{grid-template-columns:1fr}
+      .hero-card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- simple cloud + chevron icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 17.5A4.5 4.5 0 0 0 15.5 13h-1.1A6 6 0 0 0 6 14.5 4.5 4.5 0 0 0 10.5 23h9.5v-5.5z" opacity="0.95"></path>
+            <path d="M8 12l3-3 3 3" stroke-width="1.5"></path>
+          </svg>
+        </div>
+        <div>
+          <h1>Azure Learner</h1>
+          <div class="small">Hands-on labs • Paths • Cheat-sheets</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#courses">Courses</a>
+        <a href="#labs">Labs</a>
+        <a href="#resources">Resources</a>
+        <a class="cta" href="#start">Start Learning</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Learn Azure, build confidence</h2>
+        <p class="sub">Guided learning paths, hands-on labs, and real-world projects — designed for beginners and experienced engineers alike.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" id="start">Start free path</button>
+          <button class="btn btn-ghost">Explore catalog</button>
+        </div>
+
+        <div class="grid" style="margin-top:20px">
+          <div class="card">
+            <h3>Beginner</h3>
+            <div class="small">Azure fundamentals, core services, and account setup.</div>
+          </div>
+          <div class="card">
+            <h3>Intermediate</h3>
+            <div class="small">Networking, storage, and infrastructure-as-code with Terraform & ARM.</div>
+          </div>
+          <div class="card">
+            <h3>Advanced</h3>
+            <div class="small">Security hardening, monitoring, SRE patterns and optimization.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="mock" aria-hidden>
+<pre style="margin:0"><code>
+# Quick CLI preview
+az login
+az account set --subscription "My Subscription"
+az group create -n rg-demo -l eastus
+az vm create -g rg-demo -n web1 --image UbuntuLTS --generate-ssh-keys
+</code></pre>
+        </div>
+
+        <div class="features" style="margin-top:18px">
+          <div class="feature">
+            <strong>Hands-on labs</strong>
+            <div class="small">Step-by-step, no-credit-card required exercises.</div>
+          </div>
+          <div class="feature">
+            <strong>Cert paths</strong>
+            <div class="small">Prep material for AZ-900, AZ-104 and more.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="courses" style="margin-top:28px">
+      <h2 style="margin:6px 0 12px">Top Learning Paths</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Azure Fundamentals (AZ-900)</h3>
+          <p class="small">Understand cloud concepts, core Azure services, and pricing basics.</p>
+        </div>
+        <div class="card">
+          <h3>Manage Azure Infrastructure</h3>
+          <p class="small">Virtual networks, VMs, storage, and identity management.</p>
+        </div>
+        <div class="card">
+          <h3>DevOps on Azure</h3>
+          <p class="small">CI/CD with Azure DevOps, GitHub Actions and Infrastructure as Code.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs" style="margin-top:28px">
+      <h2 style="margin:6px 0 12px">Featured Labs</h2>
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:start">
+        <div class="card">
+          <h3>Deploy a 3-tier app on Azure (Terraform + Ansible)</h3>
+          <p class="small">Provision infra with Terraform, configure with Ansible — end-to-end demo you can reuse.</p>
+        </div>
+        <div class="card">
+          <h3>Secure an Azure VM</h3>
+          <p class="small">Least privilege, NSGs, and patching strategies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" style="margin-top:28px">
+      <h2 style="margin:6px 0 12px">Resources & Cheatsheets</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>CLI Cheatsheet</h3>
+          <p class="small">Common az commands for daily work.</p>
+        </div>
+        <div class="card">
+          <h3>Terraform + Azure</h3>
+          <p class="small">Provider setup, state guidance, and best practices.</p>
+        </div>
+        <div class="card">
+          <h3>Security Baseline</h3>
+          <p class="small">Network, identity, secrets, and monitoring checklist.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© Azure Learner • Built with ❤️ for cloud explorers</div>
+      <div>
+        <a class="small" href="#">Privacy</a> · <a class="small" href="#">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // tiny UX: smooth scroll & CTA
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return;
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      })
+    });
+    document.getElementById('start').addEventListener('click', ()=>{
+      alert('Great! Start with the Azure Fundamentals path — check the Courses section.');
+    });
+  </script>
+</body>
+</html>
